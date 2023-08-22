@@ -8,4 +8,8 @@ Make sure [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-windo
 
 Make sure [Helm](https://github.com/helm/helm/releases) is installed.
 
+## Preparing powershell environment
+Usefull commands
 
+#Verify Secret Exist
+kubectl describe secret mongosecret --namespace <namespace>
