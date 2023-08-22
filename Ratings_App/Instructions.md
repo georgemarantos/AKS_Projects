@@ -38,3 +38,7 @@ A finished example would look like the following:
 Update the ratings-api-deployment.yaml file with proper ACR locations and then run the following command
 
 `kubectl apply --namespace <namespace> -f ratings-api-deployment.yaml`
+
+Update the ratings-api-service.yaml file with proper type (I chose ClusterIP) and then run the following command
+
+`kubectl apply --namespace <namespace> -f ratings-api-service.yaml`
