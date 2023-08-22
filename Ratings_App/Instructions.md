@@ -33,3 +33,8 @@ From within the api and web folder run the following command making changes as n
 A finished example would look like the following:
 
 `az acr build --registry marantoslab --image ratings-web:v1 .`
+
+### Deploy back/front-end to AKS
+Update the ratings-api-deployment.yaml file with proper ACR locations and then run the following command
+
+`kubectl apply --namespace <namespace> -f ratings-api-deployment.yaml`
