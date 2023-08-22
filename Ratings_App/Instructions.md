@@ -18,8 +18,8 @@ kubectl create secret generic mongosecret \
 ## Build back/front-end to ACR
 From within the api and web folder run the following command making changes as necessary
 
-'az acr build --registry <acr> --image <imagename>:<version> <Source_Location>'
+`az acr build --registry <acr> --image <imagename>:<version> <Source_Location>`
 
-An exampple would be:
+A finished example would look like the following:
 
-'az acr build --registry marantoslab --image ratings-web:v1 .'
+`az acr build --registry marantoslab --image ratings-web:v1 .`
