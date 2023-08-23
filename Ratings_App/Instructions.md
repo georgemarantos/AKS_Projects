@@ -35,10 +35,14 @@ A finished example would look like the following:
 `az acr build --registry marantoslab --image ratings-web:v1 .`
 
 ### Deploy back/front-end to AKS
-Update the ratings-api-deployment.yaml file with proper ACR locations and then run the following command
+Update the ratings-api-deployment.yaml file with proper ACR repo and then run the following command
 
 `kubectl apply --namespace <namespace> -f ratings-api-deployment.yaml`
 
 Update the ratings-api-service.yaml file with proper type (I chose ClusterIP) and then run the following command
 
 `kubectl apply --namespace <namespace> -f ratings-api-service.yaml`
+
+Update the ratings-web-deployment.yaml file with proper ACR web and then run the following command
+
+`kubectl apply --namespace <namespace> -f ratings-web-deployment.yaml`
