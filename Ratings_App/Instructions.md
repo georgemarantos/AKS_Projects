@@ -15,6 +15,7 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 
 ### Install Mongo DB 
 Latest Mongo DB is not working so for this project use the following command after making the necessary changes:
+
 `helm install ratings bitnami/mongodb --namespace ratingsapp --set image.tag=5.0.14-debian-11-r9,auth.username=<username>,auth.password=<password>,auth.database=ratingsdb`
 
 ### Create a secret called mongosecret
