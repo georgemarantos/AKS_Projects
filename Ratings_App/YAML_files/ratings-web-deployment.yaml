@@ -13,13 +13,13 @@ spec:
     spec:
       containers:
       - name: ratings-web
-        mage: <acr_name>.azurecr.io/ratings-api:v1 # IMPORTANT: update with your own repository
+        image: [acr_name].azurecr.io/ratings-api:v1 # IMPORTANT: update with your own repository
         imagePullPolicy: Always
         ports:
         - containerPort: 8080 # the application listens to this port
         env:
         - name: API # the application expects to connect to the API at this endpoint
-          value: http://ratings-api.ratingsapp.svc.cluster.local # If there is CrashLoopBack verify API name and app is correct 
+          value: http://ratings-api.[namespace].svc.cluster.local 
         resources:
           requests: # minimum resources required
             cpu: 250m

@@ -15,17 +15,17 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 
 ### Install Mongo DB 
 helm install ratings bitnami/mongodb \
-    --namespace <namespace> \
-    --set mongodbUsername=<username>,mongodbPassword=<password>,mongodbDatabase=ratingsdb
+    --namespace [namespace] \
+    --set mongodbUsername=[username],mongodbPassword=[password],mongodbDatabase=ratingsdb
 
 ### Create a secret called mongosecret
 kubectl create secret generic mongosecret \
-    --namespace <namespace> \
-    --from-literal=MONGOCONNECTION="mongodb://<username>:<password>@ratings-mongodb.<namespace>:27017/ratingsdb"
+    --namespace [namespace] \
+    --from-literal=MONGOCONNECTION="mongodb://[username]:[password]@ratings-mongodb.[namespace]:27017/ratingsdb"
 
-## Building and deploying back/front-end
+## Building and deploying middle-tier/front-end
 
-### Build back/front-end to ACR
+### Build middle-tier/front-end to ACR
 From within the api and web folder run the following command making changes as necessary
 
 `az acr build --registry <acr> --image <imagename>:<version> <Source_Location>`
@@ -34,15 +34,15 @@ A finished example would look like the following:
 
 `az acr build --registry marantoslab --image ratings-web:v1 .`
 
-### Deploy back/front-end to AKS
+### Deploy middle-tier/front-end to AKS
 Update the ratings-api-deployment.yaml file with proper ACR repo and then run the following command
 
-`kubectl apply --namespace <namespace> -f ratings-api-deployment.yaml`
+`kubectl apply --namespace [namespace] -f ratings-api-deployment.yaml`
 
 Update the ratings-api-service.yaml file with proper type (I chose ClusterIP) and then run the following command
 
-`kubectl apply --namespace <namespace> -f ratings-api-service.yaml`
+`kubectl apply --namespace [namespace] -f ratings-api-service.yaml`
 
 Update the ratings-web-deployment.yaml file with proper ACR web and then run the following command
 
-`kubectl apply --namespace <namespace> -f ratings-web-deployment.yaml`
+`kubectl apply --namespace [namespace] -f ratings-web-deployment.yaml`

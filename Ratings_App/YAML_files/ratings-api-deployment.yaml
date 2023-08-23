@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: ratings-api
-        image: <acr_name>.azurecr.io/ratings-api:v1 # IMPORTANT: update with your own repository
+        image: [acr_name].azurecr.io/ratings-api:v1 # IMPORTANT: update with your own repository
         imagePullPolicy: Always
         ports:
         - containerPort: 3000 # the application listens to this port
@@ -30,7 +30,7 @@ spec:
           limits: # maximum resources allocated
             cpu: 500m
             memory: 256Mi
-        readinessProbe: # is the container ready to receive traffic?
+        readinessProbe: # Checks communication with MongoDB, if CrashBackLoop check here!! 
           httpGet:
             port: 3000
             path: /healthz
