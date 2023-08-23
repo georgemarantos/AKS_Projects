@@ -11,7 +11,7 @@
 ## Setup MongoDB
 
 ### Configure the Helm client to use the stable repository 
-helm repo add bitnami https://charts.bitnami.com/bitnami
+`helm repo add bitnami https://charts.bitnami.com/bitnami`
 
 ### Install Mongo DB 
 Latest Mongo DB is not working so for this project use the following command after making the necessary changes:
