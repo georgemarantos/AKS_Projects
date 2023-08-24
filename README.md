@@ -11,5 +11,8 @@ Make sure [Helm](https://github.com/helm/helm/releases) is installed.
 ## Preparing powershell environment
 Usefull commands
 
-#Verify Secret Exist
-kubectl describe secret mongosecret --namespace <namespace>
+##Verify Secret Exist
+'kubectl describe secret mongosecret --namespace [namespace]'
+
+##Get Realtime Status of Pods
+'kubectl get pods --namespace [namespace] --watch'
